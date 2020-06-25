@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="hold-transition sidebar-mini" ng-app="myapp" ng-controller="mycontroller" ng-init="getdatainfo()">
+<body class="hold-transition sidebar-mini" ng-app="myapp" ng-controller="india_Controller" ng-init="get_india_data()">
   <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -83,12 +83,12 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="../india/india_dashboard.html" class="nav-link">
+                  <a href="india_dashboard.html" class="nav-link">
                     <p>Dashboard</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../india/india_table.html" class="nav-link active">
+                  <a href="india_table.html" class="nav-link active">
                     <p>India Table</p>
                   </a>
                 </li>
@@ -107,13 +107,12 @@
       <section class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-sm-8">
-              <h1 class="m-0 text-dark"> Data is refresh on <span class="right badge badge-success">Date</span> at
-                Time <span class="right badge badge-success">Time</span></h1>
+            <div class="col-9 col-sm-9 col-md-9">
+              <h1 class="m-0 text-dark"> Data is refresh on <span class="right badge badge-success">{{in_date}}</h1>
             </div>
-            <div class="col-sm-4">
+            <div class="col-3 col-sm-3 col-md-3">
               <ol class="breadcrumb float-sm-right">
-                <li><button type="button" class="btn btn-block btn-outline-info">Refresh
+                <li><button type="button" class="btn btn-block btn-outline-info" ng-click="refresh_India_Data()">Refresh
                     Data</button></li>
               </ol>
             </div>
@@ -128,36 +127,30 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">All Country Data</h3>
-                <span class="float-sm-right">search <input type="text" ng-model="val"></span>
+                <span class="float-sm-right">search <input type="text" ng-model="ser"></span>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
+              <div class="card-body table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th style="cursor: pointer;">Country<i
-                          class="fa fa-sort float-sm-right"></i></th>
-                      <th style="cursor: pointer;">TotalConfirmed<i
-                          class="fa fa-sort float-sm-right"></i></th>
-                      <th style="cursor: pointer;">TotalDeaths<i
-                          class="fa fa-sort float-sm-right"></i></th>
-                      <th style="cursor: pointer;">TotalRecovered<i
-                          class="fa fa-sort float-sm-right"></i></th>
+                      <th>State</th>
+                      <th>TotalConfirmed</th>
+                      <th>TotalDeaths</th>
+                      <th>TotalRecovered</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <!--
-                    <tr ng-repeat="(key, value) in data.Countries | orderBy : item | filter: val">
-                      <td>{{value.Country}}</td>
-                      <td>{{value.TotalConfirmed}}</td>
-                      <td>{{value.TotalDeaths}}</td>
-                      <td>{{value.TotalRecovered}}</td>
+                    <tr ng-repeat="(key, val) in india_data.statewise | filter: ser">
+                      <td>{{val.state}}</td>
+                      <td>{{val.confirmed}}</td>
+                      <td>{{val.deaths}}</td>
+                      <td>{{val.recovered}}</td>
                     </tr>
-                    -->
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th>Country</th>
+                      <th>State</th>
                       <th>TotalConfirmed</th>
                       <th>TotalDeaths</th>
                       <th>TotalRecovered</th>
@@ -200,5 +193,4 @@
   <script src="../../dist/angularjs/ngStorage.min.js"></script>
   <script src="../../dist/js/myscript.js"></script>
 </body>
-
 </html>

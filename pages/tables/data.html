@@ -107,11 +107,11 @@
       <section class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-sm-8">
+            <div class="col-9 col-sm-9 col-md-9">
               <h1 class="m-0 text-dark"> Data is refresh on <span class="right badge badge-success">{{date}}</span> at
                 Time <span class="right badge badge-success">{{time | date:'HH:mm:ss'}}</span></h1>
             </div>
-            <div class="col-sm-4">
+            <div class="col-3 col-sm-3 col-md-3">
               <ol class="breadcrumb float-sm-right">
                 <li><button type="button" class="btn btn-block btn-outline-info" ng-click="refreshData()">Refresh
                     Data</button></li>
@@ -131,7 +131,7 @@
                 <span class="float-sm-right">search <input type="text" ng-model="val"></span>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
+              <div class="card-body table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
@@ -155,10 +155,14 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th>Country</th>
-                      <th>TotalConfirmed</th>
-                      <th>TotalDeaths</th>
-                      <th>TotalRecovered</th>
+                      <th style="cursor: pointer;" ng-click="orderbyme('Country')">Country<i
+                          class="fa fa-sort float-sm-right"></i></th>
+                      <th style="cursor: pointer;" ng-click="orderbyme('TotalConfirmed')">TotalConfirmed<i
+                          class="fa fa-sort float-sm-right"></i></th>
+                      <th style="cursor: pointer;" ng-click="orderbyme('TotalDeaths')">TotalDeaths<i
+                          class="fa fa-sort float-sm-right"></i></th>
+                      <th style="cursor: pointer;" ng-click="orderbyme('TotalRecovered')">TotalRecovered<i
+                          class="fa fa-sort float-sm-right"></i></th>
                     </tr>
                   </tfoot>
                 </table>

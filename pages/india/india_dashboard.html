@@ -19,7 +19,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" ng-app="myapp"
-  ng-controller="india_Controller">
+  ng-controller="india_Controller" ng-init="get_india_data()">
   <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -110,12 +110,11 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-8">
-              <h1 class="m-0 text-dark"> Data is refresh on <span class="right badge badge-success">date</span> at
-                Time <span class="right badge badge-success">time</span></h1>
+              <h1 class="m-0 text-dark"> Data is refresh on <span class="right badge badge-success">{{in_date}}</span></h1>
             </div><!-- /.col -->
             <div class="col-sm-4">
               <ol class="breadcrumb float-sm-right">
-                <li><button type="button" class="btn btn-block btn-outline-info" ng-click="getindiainfo()">Refresh
+                <li><button type="button" class="btn btn-block btn-outline-info" ng-click="refresh_India_Data()">Refresh
                     Data</button></li>
               </ol>
             </div><!-- /.col -->
@@ -135,7 +134,7 @@
                 <div class="info-box-content">
                   <span class="info-box-text">Total Confirmed</span>
                   <h4 class="info-box-number"><span
-                      class="right badge badge-info">23</span>
+                      class="right badge badge-info">{{india_data.statewise['0'].confirmed}}</span>
                   </h4>
                 </div>
                 <!-- /.info-box-content -->
@@ -149,7 +148,7 @@
                 <div class="info-box-content">
                   <span class="info-box-text">Total Deaths</span>
                   <h4 class="info-box-number"><span
-                      class="right badge badge-danger">43</span>
+                      class="right badge badge-danger">{{india_data.statewise['0'].deaths}}</span>
                   </h4>
                 </div>
                 <!-- /.info-box-content -->
@@ -167,7 +166,7 @@
                 <div class="info-box-content">
                   <span class="info-box-text">Total Recovered</span>
                   <h4 class="info-box-number"><span
-                      class="right badge badge-success">456</span></h4>
+                      class="right badge badge-success">{{india_data.statewise['0'].recovered}}</span></h4>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -180,12 +179,12 @@
           <!-- Main row -->
           <div class="row">
             <!-- Left col -->
-            <div class="col-md-8">
+            <div class="col-md-12">
               <!-- MAP & BOX PANE -->
               <!-- TABLE: LATEST ORDERS -->
               <div class="card">
                 <div class="card-header border-transparent">
-                  <h3 class="card-title">country table</h3>
+                  <h3 class="card-title">India Cases</h3>
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                       <i class="fas fa-minus"></i>
@@ -197,43 +196,42 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body p-0">
-                  <div class="table-responsive">
+                  <div class="table-responsive table-hover">
                     <table class="table m-0">
                       <thead>
                         <tr>
-                          <th>Country</th>
+                          <th>State</th>
                           <th>TotalConfirmed</th>
                           <th>TotalDeaths</th>
                           <th>TotalRecovered</th>
                         </tr>
                       </thead>
                       <tbody>
-                       <!--
                         <tr>
-                          <td>{{data.Countries['177'].Country}}</td>
-                          <td>{{data.Countries['177'].TotalConfirmed}}</td>
-                          <td>{{data.Countries['177'].TotalDeaths}}</td>
-                          <td>{{data.Countries['177'].TotalRecovered}}</td>
+                          <td>{{india_data.statewise['1'].state}}</td>
+                          <td>{{india_data.statewise['1'].confirmed}}</td>
+                          <td>{{india_data.statewise['1'].deaths}}</td>
+                          <td>{{india_data.statewise['1'].recovered}}</td>
                         </tr>
                         <tr>
-                          <td>{{data.Countries['82'].Country}}</td>
-                          <td>{{data.Countries['82'].TotalConfirmed}}</td>
-                          <td>{{data.Countries['82'].TotalDeaths}}</td>
-                          <td>{{data.Countries['82'].TotalRecovered}}</td>
+                          <td>{{india_data.statewise['2'].state}}</td>
+                          <td>{{india_data.statewise['2'].confirmed}}</td>
+                          <td>{{india_data.statewise['2'].deaths}}</td>
+                          <td>{{india_data.statewise['2'].recovered}}</td>
                         </tr>
                         <tr>
-                          <td>{{data.Countries['76'].Country}}</td>
-                          <td>{{data.Countries['76'].TotalConfirmed}}</td>
-                          <td>{{data.Countries['76'].TotalDeaths}}</td>
-                          <td>{{data.Countries['76'].TotalRecovered}}</td>
+                          <td>{{india_data.statewise['3'].state}}</td>
+                          <td>{{india_data.statewise['3'].confirmed}}</td>
+                          <td>{{india_data.statewise['3'].deaths}}</td>
+                          <td>{{india_data.statewise['3'].recovered}}</td>
                         </tr>
                         <tr>
-                          <td>{{data.Countries['35'].Country}}</td>
-                          <td>{{data.Countries['35'].TotalConfirmed}}</td>
-                          <td>{{data.Countries['35'].TotalDeaths}}</td>
-                          <td>{{data.Countries['35'].TotalRecovered}}</td>
+                          <td>{{india_data.statewise['4'].state}}</td>
+                          <td>{{india_data.statewise['4'].confirmed}}</td>
+                          <td>{{india_data.statewise['4'].deaths}}</td>
+                          <td>{{india_data.statewise['4'].recovered}}</td>
                         </tr>
-                        -->
+                        
                       </tbody>
                     </table>
                   </div>
@@ -241,47 +239,12 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
-                  <a href="pages/tables/data.html" class="btn btn-sm btn-secondary float-right">View All Country</a>
+                  <a href="india_table.html" class="btn btn-sm btn-secondary float-right">View All Country</a>
                 </div>
                 <!-- /.card-footer -->
               </div>
               <!-- /.card -->
             </div>
-            <!-- /.col -->
-
-            <div class="col-md-4">
-              <div class="info-box mb-3 bg-info">
-                <span class="info-box-icon"><i class="fa fa-arrow-right"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">New Confirmed</span>
-                  <span class="info-box-number">1</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-              <div class="info-box mb-3 bg-danger">
-                <span class="info-box-icon"><i class="fa fa-arrow-right"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">New Deaths</span>
-                  <span class="info-box-number">23</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-              <div class="info-box mb-3 bg-success">
-                <span class="info-box-icon"><i class="fa fa-arrow-right"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">New Recovered</span>
-                  <span class="info-box-number">3</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-
-            </div>
-            <!-- PRODUCT LIST -->
-
           </div>
           <!-- /.col -->
         </div>
@@ -309,7 +272,6 @@
   <!-- PAGE PLUGINS -->
   <!-- jQuery Mapael -->
   <script src="../../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-  <script src="../../plugins/raphael/raphael.min.js"></script>
   <!--Angularjs Script-->
   <script src="../../dist/angularjs/angular.min.js"></script>
   <script src="../../dist/angularjs/ngStorage.min.js"></script>
