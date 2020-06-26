@@ -1,4 +1,8 @@
 var app = angular.module('myapp', ['ngStorage']);
+var chart_date = [];
+var chart_cases = [];
+var chart_death = [];
+var chart_recoved = [];
 
 app.controller('mycontroller', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
     $scope.getdatainfo = function () {
@@ -54,6 +58,18 @@ app.controller('india_Controller', ['$scope', '$http', '$localStorage', function
     $scope.orderby = function (item) {
         $scope.data_sort = item;
     }
+
+    $scope.chartfun = function () {
+        if ($localStorage.India_data_storage) {
+            $scope.chart_data = $localStorage.India_data_storage;
+            for (var i = 31, j = 0; i < $scope.chart_data.cases_time_series.length; i+=5, j++) {
+                chart_date[j] = $scope.chart_data.cases_time_series[i].date;
+                chart_cases[j] = $scope.chart_data.cases_time_series[i].totalconfirmed;
+                chart_death[j] = $scope.chart_data.cases_time_series[i].totaldeceased;
+                chart_recoved[j] = $scope.chart_data.cases_time_series[i].totalrecovered;
+            }
+        }
+    };
 }]);
 
 app.controller('stateController', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
@@ -66,7 +82,6 @@ app.controller('stateController', ['$scope', '$http', '$localStorage', function 
             $localStorage.state_data_storage = res.data;
         });
     };
-
     $scope.get_state_data = function () {
         if ($scope.User_state == null | $scope.User_state == "") {
             alert('Please Enter State');
@@ -83,3 +98,4 @@ app.controller('stateController', ['$scope', '$http', '$localStorage', function 
         }
     };
 }]);
+
