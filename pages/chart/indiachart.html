@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Covid-19 Project</title>
-  
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,7 +33,16 @@
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a class="nav-link">Covid 19 India states Table</a>
+          <a href="../../index.html" class="nav-link">Covid 19 All Over World Cases</a>
+        </li>
+        <li>
+          <a href="../india/india_dashboard.html" class="nav-link">India Corona cases</a>
+        </li>
+        <li>
+          <a href="indiachart.html" class="nav-link active">Chart View of India Cases</a>
+        </li>
+        <li>
+          <a href="../india/state_dashboard.html" class="nav-link">See covid-19 Cases in you District</a>
         </li>
       </ul>
     </nav>
@@ -52,7 +61,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-             <li class="nav-item has-treeview menu-open">
+            <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link">
                 <img src="../../dist/img/4.png">
                 <p>All-Over-World-Cases
@@ -63,7 +72,7 @@
                 <li class="nav-item">
                   <a href="../../index.html" class="nav-link">
                     <p>Dashboard</p>
-                 </a>
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a href="../tables/data.html" class="nav-link">
@@ -115,67 +124,67 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Flot Charts</h1>
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Flot Charts</h1>
+            </div>
           </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        </div><!-- /.container-fluid -->
+      </section>
 
-<section class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-9">
-          <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h3 class="card-title">
-                    if Graph is not Shown Please Click on This button ---------> 
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="card card-primary card-outline">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    if Graph is not Shown Please Click on This button --------->
                     <button type="button" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                </h3>
-               </div>
-              <div class="card-body">
-                <canvas id="line-chart"></canvas>
+                  </h3>
+                </div>
+                <div class="card-body">
+                  <canvas id="line-chart"></canvas>
+                </div>
               </div>
             </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info-box mb-3 bg-info">
-            <span class="info-box-icon"><img src="../../dist/img/6.png"></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Total Confirmed</span>
-              <span class="info-box-number">{{chart_data.statewise['0'].confirmed}}</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-          <div class="info-box mb-3 bg-danger">
-            <span class="info-box-icon"><img src="../../dist/img/7.png"></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Total Deaths</span>
-              <span class="info-box-number">{{chart_data.statewise['0'].deaths}}</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-          <div class="info-box mb-3 bg-success">
-            <span class="info-box-icon"><img src="../../dist/img/1.png"></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Total Recovered</span>
-              <span class="info-box-number">{{chart_data.statewise['0'].recovered}}</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
+            <div class="col-md-3">
+              <div class="info-box mb-3 bg-info">
+                <span class="info-box-icon"><img src="../../dist/img/6.png"></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Confirmed</span>
+                  <span class="info-box-number">{{chart_data.statewise['0'].confirmed}}</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+              <div class="info-box mb-3 bg-danger">
+                <span class="info-box-icon"><img src="../../dist/img/7.png"></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Deaths</span>
+                  <span class="info-box-number">{{chart_data.statewise['0'].deaths}}</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+              <div class="info-box mb-3 bg-success">
+                <span class="info-box-icon"><img src="../../dist/img/1.png"></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Recovered</span>
+                  <span class="info-box-number">{{chart_data.statewise['0'].recovered}}</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
 
-        </div>
-        <!-- PRODUCT LIST -->
+            </div>
+            <!-- PRODUCT LIST -->
 
-      </div>
+          </div>
+        </div>
+      </section>
     </div>
-</section>
-</div>
     <!-- /.content-wrapper -->
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -203,4 +212,5 @@
   <script type="text/javascript" src="js/Chart.min.js"></script>
   <script type="text/javascript" src="js/line.js"></script>
 </body>
+
 </html>
