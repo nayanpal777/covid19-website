@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Covid-19 Project</title>
-  
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,6 +21,14 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!--Icon-->
   <link rel="icon" href="../../dist/img/9.png">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-168702335-2');
+  </script>
+
 </head>
 
 <body class="hold-transition sidebar-mini" ng-app="myapp" ng-controller="india_Controller" ng-init="get_india_data()">
@@ -61,7 +69,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-             <li class="nav-item has-treeview menu-open">
+            <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link">
                 <img src="../../dist/img/4.png">
                 <p>All-Over-World-Cases
@@ -72,7 +80,7 @@
                 <li class="nav-item">
                   <a href="../../index.html" class="nav-link">
                     <p>Dashboard</p>
-                 </a>
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a href="../tables/data.html" class="nav-link">
@@ -106,7 +114,7 @@
                     <p>Graphical View</p>
                   </a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a href="state_dashboard.html" class="nav-link">
                     <p>State Table</p>
@@ -213,4 +221,5 @@
   <script src="../../dist/angularjs/ngStorage.min.js"></script>
   <script src="../../dist/js/myscript.js"></script>
 </body>
+
 </html>

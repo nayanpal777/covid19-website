@@ -18,6 +18,14 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!--Icon-->
   <link rel="icon" href="../../dist/img/9.png">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-168702335-2');
+  </script>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" ng-app="myapp"
@@ -62,58 +70,58 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link">
-                  <img src="../../dist/img/4.png">
-                  <p>All-Over-World-Cases
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="../../index.html" class="nav-link">
-                      <p>Dashboard</p>
-                   </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../tables/data.html" class="nav-link">
-                      <p>Countries Table</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link active">
-                  <img src="../../dist/img/12.png">
-                  <p>
-                    India-Cases
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="india_dashboard.html" class="nav-link active">
-                      <img src="../../dist/img/13.png">
-                      <p>Dashboard</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="india_table.html" class="nav-link">
-                      <p>India Table</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="../chart/indiachart.html" class="nav-link">
-                      <p>Graphical View</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="state_dashboard.html" class="nav-link">
-                      <p>State Table</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
+            <li class="nav-item has-treeview menu-open">
+              <a href="#" class="nav-link">
+                <img src="../../dist/img/4.png">
+                <p>All-Over-World-Cases
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../../index.html" class="nav-link">
+                    <p>Dashboard</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../tables/data.html" class="nav-link">
+                    <p>Countries Table</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview menu-open">
+              <a href="#" class="nav-link active">
+                <img src="../../dist/img/12.png">
+                <p>
+                  India-Cases
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="india_dashboard.html" class="nav-link active">
+                    <img src="../../dist/img/13.png">
+                    <p>Dashboard</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="india_table.html" class="nav-link">
+                    <p>India Table</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../chart/indiachart.html" class="nav-link">
+                    <p>Graphical View</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="state_dashboard.html" class="nav-link">
+                    <p>State Table</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -128,7 +136,8 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-9 col-sm-9 col-md-9">
-              <h1 class="m-0 text-dark"> Data is refresh on <span class="right badge badge-success">{{in_date}}</span></h1>
+              <h1 class="m-0 text-dark"> Data is refresh on <span class="right badge badge-success">{{in_date}}</span>
+              </h1>
             </div><!-- /.col -->
             <div class="col-3 col-sm-3 col-md-3">
               <ol class="breadcrumb float-sm-right">
@@ -249,7 +258,7 @@
                           <td>{{india_data.statewise['4'].deaths}}</td>
                           <td>{{india_data.statewise['4'].recovered}}</td>
                         </tr>
-                        
+
                       </tbody>
                     </table>
                   </div>
