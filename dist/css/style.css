@@ -11,7 +11,7 @@
   font-weight: 500;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 575px) {
   .content #pos {
     position: fixed;
   }
