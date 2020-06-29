@@ -16,3 +16,9 @@
     position: fixed;
   }
 }
+
+@media (max-width: 575px) {
+  .content .card .card-body img {
+      display: none;
+  }
+}
