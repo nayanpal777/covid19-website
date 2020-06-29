@@ -12,19 +12,11 @@
     <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../dist/css/style.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!--Icon-->
     <link rel="icon" href="../../dist/img/9.png">
-
-    <style>
-        .content .card .card-body .table tr :hover {
-            cursor: pointer;
-            color: black;
-            background-color: #F4F6F9;
-            font-weight: 500;
-        }
-    </style>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -45,16 +37,16 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                <li class="nav-item d-none d-sm-inline-block1">
                     <a href="../../index.html" class="nav-link">Covid 19 All Over World Cases</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                <li class="nav-item d-none d-sm-inline-block1">
                     <a href="india_dashboard.html" class="nav-link">India Corona cases</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                <li class="nav-item d-none d-sm-inline-block1">
                     <a href="../chart/indiachart.html" class="nav-link">Chart View of India Cases</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                <li class="nav-item d-none d-sm-inline-block1">
                     <a href="state_dashboard.html" class="nav-link active">See covid-19 Cases in you District</a>
                 </li>
             </ul>
@@ -248,7 +240,7 @@
                     <!-- Main row -->
                     <div class="row ">
                         <!-- Left col -->
-                        <div class="col-md-9">
+                        <div class="col-md-12 col-lg-9 col-xl-9">
                             <!-- MAP & BOX PANE -->
                             <!-- TABLE: LATEST ORDERS -->
                             <div class="card">
@@ -279,8 +271,8 @@
                             </div>
                             <!-- /.card -->
                         </div>
-                        <div class="col-md-3">
-                            <div class="position-fixed">
+                        <div class="col-lg-3 col-xl-3">
+                            <div id="pos">
                                 <h3><span class="right badge badge-secondary">{{district}}</span></h3>
                                 <div class="info-box mb-3 bg-info">
                                     <span class="info-box-icon"><img src="../../dist/img/6.png"></span>

@@ -1,0 +1,18 @@
+@media (min-width: 918px) {
+  .wrapper .navbar-nav .d-sm-inline-block1 {
+    display: inline-block !important;
+  }
+}
+
+.content .card .card-body .table tr :hover {
+  cursor: pointer;
+  color: black;
+  background-color: #f4f6f9;
+  font-weight: 500;
+}
+
+@media (min-width: 992px) {
+  .content #pos {
+    position: fixed;
+  }
+}
