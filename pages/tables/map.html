@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Covid-19 Project</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--MapBox Link for Map-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../dist/css/style.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!--Icon-->
+    <link rel="icon" href="../../dist/img/9.png">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-168702335-2');
+    </script>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block1">
+                    <a href="data.html" class="nav-link active">Covid 19 All Over World Cases</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block1">
+                    <a href="../india/india_dashboard.html" class="nav-link">India Corona cases</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block1">
+                    <a href="../chart/indiachart.html" class="nav-link">Chart View of India Cases</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block1">
+                    <a href="../india/state_dashboard.html" class="nav-link">See covid-19 Cases in you District</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block1" style="cursor: pointer;">
+                    <div class="dropdown">
+                        <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown">FAQs</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="../FAQ/FAQs.html">FAQs in English</a>
+                            <a class="dropdown-item" href="../FAQ/FAQsHindi.html">FAQs in Hindi</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed">
+            <!-- Brand Logo -->
+            <a href="" class="brand-link">
+                <span class="brand-text font-weight-light">Welcome</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link active">
+                                <img src="../../dist/img/4.png">
+                                <p>All-Over-World-Cases
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../index.html" class="nav-link">
+                                        <p>Dashboard</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="data.html" class="nav-link">
+                                        <p>Countries Table</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="data.html" class="nav-link active">
+                                        <img src="../../dist/img/8.png">
+                                        <p>Map</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link">
+                                <img src="../../dist/img/12.png">
+                                <p>
+                                    India-Cases
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../india/india_dashboard.html" class="nav-link">
+                                        <p>Dashboard</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../india/india_table.html" class="nav-link">
+                                        <p>India Table</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../chart/indiachart.html" class="nav-link">
+                                        <p>Graphical View</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../india/state_dashboard.html" class="nav-link">
+                                        <p>State Table</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link">
+                                <img src="../../dist/img/FAQ/2.png">
+                                <p>FAQs
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../FAQ/FAQs.html" class="nav-link">
+                                        <p>FAQs in English</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../FAQ/FAQsHindi.html" class="nav-link">
+                                        <p>FAQs in Hindi</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6 col-sm-5 col-md-10 col-xl-12">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item">
+                                    <img src="../../dist/img/marker/marker-xxl.png" height="40px" width="40px">
+                                </li>
+                                <li class="list-inline-item">
+                                    <h6>Dead less than 100</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="../../dist/img/marker/marker-xxl(4).png" height="40px" width="40px">
+                                </li>
+                                <li class="list-inline-item">
+                                    <h6>Dead less than 1000</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="../../dist/img/marker/marker-xxl(3).png" height="40px" width="40px">
+                                </li>
+                                <li class="list-inline-item">
+                                    <h6>Dead less than 3000</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="../../dist/img/marker/marker-xxl(2).png" height="40px" width="40px">
+                                </li>
+                                <li class="list-inline-item">
+                                    <h6>Dead less than 5000</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <img src="../../dist/img/marker/marker-xxl(1).png" height="40px" width="40px">
+                                </li>
+                                <li class="list-inline-item">
+                                    <h6>Dead more than 5000</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <div id="map" style="width:100%; height: 100vh;"></div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2020 <a>Nayan pal</a></strong>
+            All rights reserved.
+        </footer>
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <script src="../../plugins/datatables/jquery.dataTables.js"></script>
+    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <!-- page script -->
+    <script src="../../dist/angularjs/angular.min.js"></script>
+    <script src="../../dist/angularjs/ngStorage.min.js"></script>
+    <script src="../../dist/js/myscript.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibmF5YW5wYWw3NzciLCJhIjoiY2ticnZod216MHdkbDJva2Fsa2todTc4eSJ9.ilchH7LEuz-l0IM1vocldw';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            //style: 'mapbox://styles/mapbox/dark-v10',
+            center: [78.9629, 20.5937],
+            zoom: 2
+        });
+        map.addControl(new mapboxgl.NavigationControl());
+    </script>
+    <script src="mapJS/script.js"></script>
+</body>
+
+</html>

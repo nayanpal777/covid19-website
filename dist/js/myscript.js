@@ -13,7 +13,7 @@ var chart_recoved = [];
     world Cases Controller
 **************************************************************/
 app.controller('mycontroller', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
-    
+
     /*------------------------------------------------------------
     ------> function to check data present in localStorage or Not
     */
@@ -54,7 +54,7 @@ app.controller('mycontroller', ['$scope', '$http', '$localStorage', function ($s
     India Cases Controller
 **************************************************************/
 app.controller('india_Controller', ['$scope', '$http', '$localStorage', function ($scope, $http, $localStorage) {
-    
+
     /*------------------------------------------------------------
     ------> function to check data present in localStorage or Not
     */
@@ -95,7 +95,7 @@ app.controller('india_Controller', ['$scope', '$http', '$localStorage', function
     $scope.chartfun = function () {
         if ($localStorage.India_data_storage) {
             $scope.chart_data = $localStorage.India_data_storage;
-            for (var i = 31, j = 0; i < $scope.chart_data.cases_time_series.length; i+=5, j++) {
+            for (var i = 31, j = 0; i < $scope.chart_data.cases_time_series.length; i += 5, j++) {
                 chart_date[j] = $scope.chart_data.cases_time_series[i].date;
                 chart_cases[j] = $scope.chart_data.cases_time_series[i].totalconfirmed;
                 chart_death[j] = $scope.chart_data.cases_time_series[i].totaldeceased;
@@ -136,13 +136,13 @@ app.controller('stateController', ['$scope', '$http', '$localStorage', function 
             $scope.distict = state_data[$scope.User_state].districtData;
         }
     };
-    
+
     /*------------------------------------------------------------
     ------> function to get Caseses Data from selected District
     */
     $scope.get_distict_data = function (key) {
         $scope.district = key;
-        if($localStorage.state_data_storage){
+        if ($localStorage.state_data_storage) {
             $scope.data = $localStorage.state_data_storage[u_state].districtData[key];
         }
     };
